@@ -1,0 +1,13 @@
+#!/bin/bash 
+# program: Fizzbuzz part 2
+# Heather McMillen
+# Date of last revision: 3/3/2013
+
+function rps 
+{
+	echo "Welcome to Rock,Paper, Scissors"
+}
+
+rps
+
+

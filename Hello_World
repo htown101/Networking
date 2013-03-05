@@ -1,0 +1,4 @@
+#!/bin/bash
+# My first program
+
+echo "Hey Heather!!"

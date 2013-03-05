@@ -1,0 +1,21 @@
+#!/bin/bash
+# program: Fizzbuzz
+# Heather McMillen
+# Date of last revision: 3/3/2013
+
+num=1
+
+while [ $num -lt 101 ]
+do
+
+if [ $(($num % 3)) -eq "0" ]; then	  
+   echo "fizz"
+elif [ $(($num % 5)) -eq "0" ]; then
+   echo "buzz"
+elif [ $(($num % 3)) -eq "0" -a $(($num % 5)) -eq "0" ]; then 
+   echo "fizzbuzz"
+else	
+   echo "$num" 
+fi
+   num=$((num + 1))
+done

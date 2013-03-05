@@ -1,0 +1,24 @@
+#!/bin/bash
+# program: Fizzbuzz part 2
+# Heather McMillen
+# Date of last revision: 3/3/2013
+
+num=1
+value=0
+
+echo -n "Enter a number > "
+read value
+while [ $num -lt $value ]
+do
+
+if [ $(($num % 3)) -eq "0" ]; then	  
+   echo "fizz"
+elif [ $(($num % 5)) -eq "0" ]; then
+   echo "buzz"
+elif [ $(($num % 3)) -eq "0" -a $(($num % 5)) -eq "0" ]; then 
+   echo "fizzbuzz"
+else	
+   echo "$num" 
+fi
+   num=$((num + 1))
+done

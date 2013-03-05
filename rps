@@ -1,0 +1,61 @@
+#!/bin/bash 
+# program: Fizzbuzz part 2
+# Heather McMillen
+# Date of last revision: 3/3/2013
+
+# Declare some variables
+r="r"
+p="p"
+s="s" 
+uchoice=""
+value=false
+# functions need to be declared before they are called
+function rps
+{
+  echo "Welcome to Rock,Paper, Scissors"
+# Get user input
+echo "User please choose: r,p,s:"
+read uchoice			
+echo "You chose: "
+echo $uchoice
+# Choose a random number
+number=$((RANDOM%3+1))
+echo "The computer chose: "
+# Bash's switch statement
+case $number in
+    1 ) echo "rock"
+        ;;
+    2 ) echo "paper"
+        ;;
+    3 ) echo "scissors"
+        ;;
+    * ) echo "You did not enter a number between 1 and 3."
+esac
+# Determine winner
+if [ $uchoice = "r" -a $number = "1" ] || [ $uchoice = "p" -a $number = "2" ] || [ $uchoice = "s" -a $number = "3" ]; then
+	echo "It's a tie."
+	value=true
+   elif [ $uchoice="r" -a $number="2" ]; then
+	echo "You lose."
+   elif [ $uchoice="r" -a $number="3" ]; then
+	echo "You win!"
+   elif [ $uchoice="p" -a $number="1" ]; then
+	echo "You win."
+   elif [ $uchoice="p" -a $number="3" ]; then
+	echo "You lose!"
+   elif [ $uchoice="s" -a $number="2" ]; then
+	echo "You win."
+   elif [ $uchoice="s" -a $number="1" ]; then
+	echo "You lose!"
+else
+	echo "You chose a bad number"
+fi
+}
+
+
+rps 
+# If it is a tie, play the game again
+if [ $value = true ]; then
+    rps
+fi
+

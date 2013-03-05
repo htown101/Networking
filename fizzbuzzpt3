@@ -1,0 +1,30 @@
+#!/bin/bash 
+# program: Fizzbuzz part 2
+# Heather McMillen
+# Date of last revision: 3/3/2013
+
+num=1
+value=0
+num1=0
+num2=0
+echo -n "Enter a loop number > "
+read value
+echo -n "Enter a number > "
+read num1
+echo -n "Enter a number > "
+read num2
+
+while [ $num -lt $value ]
+do
+
+if [ $(($num % $num1)) -eq "0" -a $(($num % $num2)) -eq "0" ]; then 
+   echo "fizzbuzz"
+elif [ $(($num % $num1)) -eq "0" ]; then	  
+   echo "fizz"
+elif [ $(($num % $num2)) -eq "0" ]; then
+   echo "buzz"
+else	
+   echo "$num" 
+fi
+   num=$((num + 1))
+done
